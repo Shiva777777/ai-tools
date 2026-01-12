@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Tools Directory by Om Bundela - Explore the latest in AI technology</title>
+    <meta name="description" content="Discover the best AI tools for productivity, creativity, and automation. Created by Om Bundela - Browse our curated collection of AI-powered applications.">
+    
+    <!-- Preload fonts for better performance -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Link to external stylesheet -->
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+    <!-- Font Awesome CDN for social icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+</head>
+
+<body style="background: linear-gradient(120deg, #6366f1 0%, #0f172a 100%); min-height: 100vh; font-family: 'Inter', sans-serif;">
+    <!-- Header section with navigation and theme toggle -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <h1 class="logo">AI Tools</h1>
+                <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark/light theme">
+                    <span class="theme-icon">🌙</span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main content area -->
+    <main class="main">
+        <div class="container">
+            <!-- Hero section -->
+            <section class="hero">
+                <h2 class="hero-title">AI Tools</h2>
+                <p class="hero-subtitle">Explore the latest in AI technology</p>
+                <div style="color: white; font-size: 1.2rem; margin: 1.5rem 0; font-weight: 300;">
+                    Created by <strong style="color: #f0f9ff; text-shadow: 0 0 10px rgba(255,255,255,0.5);">Om Bundela</strong>
+                </div>
+                <button class="hero-button" id="discoverButton">
+                    Discover Tools
+                    <span class="button-arrow">↓</span>
+                </button>
+            </section>
+
+            <!-- Search section -->
+            <section class="search-section">
+                <div class="search-container">
+                    <input 
+                        type="text" 
+                        id="searchInput" 
+                        class="search-input" 
+                        placeholder="Search AI tools by name..."
+                        aria-label="Search AI tools"
+                    >
+                    <button class="search-button" id="searchButton" aria-label="Search">
+                        🔍
+                    </button>
+                </div>
+            </section>
+
+            <!-- AI Tools grid section -->
+            <section class="tools-section" id="toolsSection">
+                <h2 class="section-title">25+ Featured AI Tools</h2>
+                <div class="tools-grid" id="toolsGrid">
+                    <!-- AI Tool Cards will be populated by JavaScript -->
+                </div>
+                <!-- No results message (hidden by default) -->
+                <div class="no-results" id="noResults" style="display: none;">
+                    <p>No tools found matching your search. Try a different keyword!</p>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer section -->
+    <footer class="footer">
+        <div class="container">
+            <p class="footer-text">Made with ♥ by <strong style="color: #6366f1; font-weight: 600;">Om Bundela</strong> | AI Tools Directory</p>
+            <div class="share-buttons">
+                <h3 style="color:#fff; margin-bottom:0.5rem;">Share this website:</h3>
+                <div class="share-row">
+                    <button class="whatsapp" onclick="shareOnWhatsApp()"><i class="fab fa-whatsapp"></i> WhatsApp</button>
+                    <button class="facebook" onclick="shareOnFacebook()"><i class="fab fa-facebook-f"></i> Facebook</button>
+                    <button class="instagram" onclick="openInstagram()"><i class="fab fa-instagram"></i> Instagram</button>
+                    <button class="linkedin" onclick="shareOnLinkedIn()"><i class="fab fa-linkedin-in"></i> LinkedIn</button>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Link to external JavaScript file -->
+    <script src="{% static 'script.js' %}"></script>
+    <script>
+        function getShareUrl() {
+            return window.location.href;
+        }
+        function shareOnWhatsApp() {
+            window.open('https://wa.me/?text=' + encodeURIComponent(getShareUrl()), '_blank');
+        }
+        function shareOnFacebook() {
+            window.open('https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(getShareUrl()), '_blank');
+        }
+        function openInstagram() {
+            // Opens Instagram - change to your profile URL if you want to link to a specific account
+            window.open('https://www.instagram.com/om_bundela_8055?igsh=aTFwcTFzcXhwZHo1', '_blank');
+        }
+        function shareOnLinkedIn() {
+            window.open('https://www.linkedin.com/in/om-rajak-399a13374/' + encodeURIComponent(getShareUrl()), '_blank');
+        }
+    </script>
+</body>
+</html>
